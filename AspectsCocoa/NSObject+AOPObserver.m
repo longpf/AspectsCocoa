@@ -25,8 +25,7 @@ static void * kAOPAssociatedObserversKey = &kAOPAssociatedObserversKey;
         method = class_getClassMethod([self class], selector);
     }
     if (!method) {
-        
-        NSLog(@"方法不存在");
+        NSAssert(!method, @"方法不存在");
         return;
     }
     
@@ -209,7 +208,7 @@ if (value) {\
     //没有的话,生成中间类
     Class originClass = NSClassFromString(originalClassName);
     if (!originClass) {
-        NSLog(@"参数 originalClassName 有问题");
+        NSAssert(!originClass, @"参数 originalClassName 有问题");
         return nil;
     }
     sracClass = objc_allocateClassPair(originClass, sracClassName.UTF8String, 0);
