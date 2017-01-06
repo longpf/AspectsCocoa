@@ -15,6 +15,8 @@
 		D3EBA6E71E1F932800FE285B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EBA6E51E1F932800FE285B /* LaunchScreen.storyboard */; };
 		D3EBA6F21E1F932800FE285B /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA6F11E1F932800FE285B /* ExampleTests.m */; };
 		D3EBA6FD1E1F932800FE285B /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA6FC1E1F932800FE285B /* ExampleUITests.m */; };
+		D3EBA7101E1F99D900FE285B /* AOPUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA70F1E1F99D900FE285B /* AOPUtility.m */; };
+		D3EBA7131E1F9CDA00FE285B /* NSObject+AOPObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA7121E1F9CDA00FE285B /* NSObject+AOPObserver.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		D3EBA6F81E1F932800FE285B /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBA6FC1E1F932800FE285B /* ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUITests.m; sourceTree = "<group>"; };
 		D3EBA6FE1E1F932800FE285B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3EBA70E1E1F99D900FE285B /* AOPUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOPUtility.h; sourceTree = "<group>"; };
+		D3EBA70F1E1F99D900FE285B /* AOPUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOPUtility.m; sourceTree = "<group>"; };
+		D3EBA7111E1F9CDA00FE285B /* NSObject+AOPObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AOPObserver.h"; sourceTree = "<group>"; };
+		D3EBA7121E1F9CDA00FE285B /* NSObject+AOPObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AOPObserver.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,10 @@
 		D3EBA70A1E1F93A600FE285B /* AspectsCocoa */ = {
 			isa = PBXGroup;
 			children = (
+				D3EBA7111E1F9CDA00FE285B /* NSObject+AOPObserver.h */,
+				D3EBA7121E1F9CDA00FE285B /* NSObject+AOPObserver.m */,
+				D3EBA70E1E1F99D900FE285B /* AOPUtility.h */,
+				D3EBA70F1E1F99D900FE285B /* AOPUtility.m */,
 			);
 			path = AspectsCocoa;
 			sourceTree = "<group>";
@@ -281,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EBA7101E1F99D900FE285B /* AOPUtility.m in Sources */,
 				D3EBA6DF1E1F932800FE285B /* ViewController.m in Sources */,
 				D3EBA6DC1E1F932800FE285B /* AppDelegate.m in Sources */,
+				D3EBA7131E1F9CDA00FE285B /* NSObject+AOPObserver.m in Sources */,
 				D3EBA6D91E1F932800FE285B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
