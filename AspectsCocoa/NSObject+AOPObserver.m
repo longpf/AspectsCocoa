@@ -191,6 +191,29 @@ if (value) {\
     
 }
 
+- (void)removeObserver:(NSObject *)observer forSelector:(SEL)selector
+{
+    NSMutableArray *observers = objc_getAssociatedObject(self, kAOPAssociatedObserversKey);
+    
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(AOPObserverInfo *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        
+        return (observer == evaluatedObject.observer && (selector ? sel_isEqual(selector, evaluatedObject.sel):YES));
+    }];
+    
+    NSArray *filterArray = [observers filteredArrayUsingPredicate:predicate];
+    
+    if (filterArray && filterArray.count) {
+        @synchronized (observers) {
+            [observers removeObjectsInArray:filterArray];
+        }
+    }
+}
+
+- (void)removeObserver:(NSObject *)observer
+{
+    [self removeObserver:observer forSelector:NULL];
+}
+
 
 #pragma mark - tool
 

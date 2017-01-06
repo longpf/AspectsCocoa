@@ -24,5 +24,7 @@
 @interface NSObject (AOPObserver)
 
 - (void)addObserver:(NSObject *)observer forSelector:(SEL)selector withBlock:(id)block;
+- (void)removeObserver:(NSObject *)observer forSelector:(SEL)selector;
+- (void)removeObserver:(NSObject *)observer;
 
 @end
