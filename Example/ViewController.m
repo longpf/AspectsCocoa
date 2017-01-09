@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.label = [UILabel new];
+    
     [self.label addObserver:self forSelector:@selector(setText:) withBlock:^(AOPObserverInfo *info,NSString *text){
         NSLog(@"text = %@",text);
     }];
@@ -32,13 +33,20 @@
         
     }];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.label.text = @"6666";
-        [self.label drawTextInRect:CGRectZero];
-    });
+}
+
+- (IBAction)invoke:(id)sender {
+    
+    self.label.text = @"666";
+    [self.label drawTextInRect:CGRectZero];
     
 }
 
+- (IBAction)remove:(id)sender {
+    
+    [self.label removeObserver:self];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
