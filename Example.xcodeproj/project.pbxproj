@@ -17,6 +17,7 @@
 		D3EBA6FD1E1F932800FE285B /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA6FC1E1F932800FE285B /* ExampleUITests.m */; };
 		D3EBA7101E1F99D900FE285B /* AOPUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA70F1E1F99D900FE285B /* AOPUtility.m */; };
 		D3EBA7131E1F9CDA00FE285B /* NSObject+AOPObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA7121E1F9CDA00FE285B /* NSObject+AOPObserver.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D3EBA7231E23E91400FE285B /* PFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBA7221E23E91400FE285B /* PFLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		D3EBA70F1E1F99D900FE285B /* AOPUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOPUtility.m; sourceTree = "<group>"; };
 		D3EBA7111E1F9CDA00FE285B /* NSObject+AOPObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AOPObserver.h"; sourceTree = "<group>"; };
 		D3EBA7121E1F9CDA00FE285B /* NSObject+AOPObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AOPObserver.m"; sourceTree = "<group>"; };
+		D3EBA7211E23E91400FE285B /* PFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLabel.h; sourceTree = "<group>"; };
+		D3EBA7221E23E91400FE285B /* PFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 			children = (
 				D3EBA6DA1E1F932800FE285B /* AppDelegate.h */,
 				D3EBA6DB1E1F932800FE285B /* AppDelegate.m */,
+				D3EBA7211E23E91400FE285B /* PFLabel.h */,
+				D3EBA7221E23E91400FE285B /* PFLabel.m */,
 				D3EBA6DD1E1F932800FE285B /* ViewController.h */,
 				D3EBA6DE1E1F932800FE285B /* ViewController.m */,
 				D3EBA6E01E1F932800FE285B /* Main.storyboard */,
@@ -295,6 +300,7 @@
 				D3EBA6DF1E1F932800FE285B /* ViewController.m in Sources */,
 				D3EBA6DC1E1F932800FE285B /* AppDelegate.m in Sources */,
 				D3EBA7131E1F9CDA00FE285B /* NSObject+AOPObserver.m in Sources */,
+				D3EBA7231E23E91400FE285B /* PFLabel.m in Sources */,
 				D3EBA6D91E1F932800FE285B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,8 @@ AOP是OOP的延续，是（Aspect Oriented Programming）的缩写，意思是�
 如何使用?
 ===============
 
+**添加 :**
+
 ```
 
 [self.label addObserver:self forSelector:@selector(setText:) withBlock:^(AOPObserverInfo *info,NSString *text){
@@ -38,3 +40,37 @@ AOP是OOP的延续，是（Aspect Oriented Programming）的缩写，意思是�
 
 ```
 
+**移除 :**
+
+
+`[self.label removeObserver:self forSelector:@selector(setText:)];`
+
+**or**
+
+`[self.label removeObserver:self];`
+
+
+[详细可以参看demo>>](https://github.com/LongPF/AspectsCocoa)
+
+安装
+===============
+
+### CocoaPods
+`pod 'AspectsCocoa'`
+
+### 手动
+将**AspectsCocoa**文件夹拖到项目中
+
+
+
+
+实现原理
+===============
+
+[可以参看我的博客>>](https://longpengfei.com)
+
+
+其他
+===============
+
+如果大家发现什么错误,建议可以联系我 QQ466142249
