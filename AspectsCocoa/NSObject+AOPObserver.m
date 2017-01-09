@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "AOPUtility.h"
 
-static NSString *const kAOPClassPrefix = @"SRACNotifying_";
+static NSString *const kAOPClassPrefix = @"AOPNotifying_";
 static void * kAOPAssociatedObserversKey = &kAOPAssociatedObserversKey;
 
 @implementation NSObject (AOPObserver)
@@ -34,7 +34,7 @@ static void * kAOPAssociatedObserversKey = &kAOPAssociatedObserversKey;
     NSString *clazzName = NSStringFromClass(clazz);
     
     if (![clazzName hasPrefix:kAOPClassPrefix]) {
-        clazz = [self makeSRACClassWithOriginalClassName:clazzName];
+        clazz = [self makeAOPClassWithOriginalClassName:clazzName];
         //修改isa指针
         object_setClass(self, clazz);
     }
@@ -157,11 +157,11 @@ if (value) {\
             
             if (!hasReturnValue) {
                 
-                srac_func(target, sselector, imp, args, NO);
+                aop_func(target, sselector, imp, args, NO);
                 
             }else{
                 
-                returnValue = srac_func(target, sselector, imp, args, YES);
+                returnValue = aop_func(target, sselector, imp, args, YES);
                 
             }
             
@@ -170,7 +170,7 @@ if (value) {\
                 if (sel_isEqual(info.sel, sselector)) {
                     info.arguments = args;
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        srac_block(info.block, info);
+                        aop_block(info.block, info);
                     });
                 }
             }
@@ -218,14 +218,14 @@ if (value) {\
 #pragma mark - tool
 
 
-- (Class)makeSRACClassWithOriginalClassName:(NSString *)originalClassName
+- (Class)makeAOPClassWithOriginalClassName:(NSString *)originalClassName
 {
     //查看是否中间类是否生成过
-    NSString *sracClassName = [kAOPClassPrefix stringByAppendingString:originalClassName];
-    Class sracClass = NSClassFromString(sracClassName);
+    NSString *aopClassName = [kAOPClassPrefix stringByAppendingString:originalClassName];
+    Class aopClass = NSClassFromString(aopClassName);
     
-    if (sracClass) {
-        return sracClass;
+    if (aopClass) {
+        return aopClass;
     }
     
     //没有的话,生成中间类
@@ -234,19 +234,19 @@ if (value) {\
         NSAssert(!originClass, @"参数 originalClassName 有问题");
         return nil;
     }
-    sracClass = objc_allocateClassPair(originClass, sracClassName.UTF8String, 0);
+    aopClass = objc_allocateClassPair(originClass, aopClassName.UTF8String, 0);
     
     //修改class方法 隐藏这个类
     Method classMethod = class_getInstanceMethod(originClass, @selector(class));
     const char *types = method_getTypeEncoding(classMethod);
-    class_addMethod(sracClass, @selector(class), imp_implementationWithBlock(^(id target,SEL sel){
+    class_addMethod(aopClass, @selector(class), imp_implementationWithBlock(^(id target,SEL sel){
         return class_getSuperclass(object_getClass(target));
     }), types);
     
     //告诉runtime 这个类的存在
-    objc_registerClassPair(sracClass);
+    objc_registerClassPair(aopClass);
     
-    return sracClass;
+    return aopClass;
 }
 
 - (BOOL)hasSelector:(SEL)selector

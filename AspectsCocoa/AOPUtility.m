@@ -9,7 +9,7 @@
 #import "AOPUtility.h"
 #import "NSObject+AOPObserver.h"
 
-inline id srac_func(id target,SEL sel,IMP imp,NSArray *args,BOOL hasReturnValue){
+inline id aop_func(id target,SEL sel,IMP imp,NSArray *args,BOOL hasReturnValue){
     
     switch (args.count) {
         case 1:
@@ -215,7 +215,7 @@ inline id srac_func(id target,SEL sel,IMP imp,NSArray *args,BOOL hasReturnValue)
 };
 
 
-inline void srac_block(id block,AOPObserverInfo *info){
+inline void aop_block(id block,AOPObserverInfo *info){
     
     NSArray *args = info.arguments;
     

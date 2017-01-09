@@ -21,9 +21,9 @@
  
  @return 原方法如果有返回值 则返回对应值
  */
-id srac_func(id target,SEL sel,IMP imp,NSArray *args,BOOL hasReturnValue);
+id aop_func(id target,SEL sel,IMP imp,NSArray *args,BOOL hasReturnValue);
 
-void srac_block(id block,AOPObserverInfo *info);
+void aop_block(id block,AOPObserverInfo *info);
 
 @interface AOPUtility : NSObject
 
