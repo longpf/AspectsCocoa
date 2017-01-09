@@ -75,19 +75,19 @@ static NSString *const kAOPAssociatedObserversKey = @"kAOPAssociatedObserversKey
                 
 #define ARGUMENT_NUMBER_TYPE(type)    \
 do { \
-type val = 0; \
-val = va_arg(arguments,type); \
-[args addObject:@(val)]; \
+    type val = 0; \
+    val = va_arg(arguments,type); \
+    [args addObject:@(val)]; \
 } while (0)
                 
 #define ARGUMENT_VALUE_TYPE(type,actualType)      \
 do { \
-actualType val; \
-val = va_arg(arguments,actualType); \
-NSValue *value = [NSValue value:&val withObjCType:type]; \
-if (value) {\
-[args addObject:value]; \
-} \
+    actualType val; \
+    val = va_arg(arguments,actualType); \
+    NSValue *value = [NSValue value:&val withObjCType:type]; \
+    if (value) {\
+    [args addObject:value]; \
+    } \
 } while (0);
                 
                 for (int i = 2; counter -- >= 0; i++) {
