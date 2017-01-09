@@ -3,7 +3,6 @@ AspectsCocoa
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/AspectsCocoa/AspectsCocoa/master/LICENSE)&nbsp;
 [![CocoaPods](http://img.shields.io/cocoapods/v/AspectsCocoa.svg?style=flat)](http://cocoapods.org/?q= AspectsCocoa)&nbsp;
-[![CocoaPods](http://img.shields.io/cocoapods/p/AspectsCocoa.svg?style=flat)](http://cocoapods.org/?q= AspectsCocoa)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%206%2B%20-red.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
 一个简单实现AOP的库
@@ -15,6 +14,7 @@ AspectsCocoa
 
 面向切面编程(也叫面向方面)：Aspect Oriented Programming(AOP),是目前软件开发中的一个热点。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。　　
 AOP是OOP的延续，是（Aspect Oriented Programming）的缩写，意思是面向切面（方面）编程。　　
+
 [详细可以参看这里>>](http://www.jianshu.com/p/a833d114099a)  
 
 
