@@ -11,7 +11,7 @@
 #import "AOPUtility.h"
 
 static NSString *const kAOPClassPrefix = @"AOPNotifying_";
-static void * kAOPAssociatedObserversKey = &kAOPAssociatedObserversKey;
+static NSString *const kAOPAssociatedObserversKey = @"kAOPAssociatedObserversKey";
 
 @implementation NSObject (AOPObserver)
 
@@ -165,7 +165,7 @@ if (value) {\
                 
             }
             
-            NSMutableArray *observers = objc_getAssociatedObject(self, kAOPAssociatedObserversKey);
+            NSMutableArray *observers = objc_getAssociatedObject(self, (__bridge const void *)(kAOPAssociatedObserversKey));
             for (AOPObserverInfo *info in observers) {
                 if (sel_isEqual(info.sel, sselector)) {
                     info.arguments = args;
@@ -182,7 +182,7 @@ if (value) {\
     
     //将observer信息存起来
     AOPObserverInfo *info = [[AOPObserverInfo alloc] initWithObserver:observer sel:selector block:block];
-    NSMutableArray *observers = objc_getAssociatedObject(self, kAOPAssociatedObserversKey);
+    NSMutableArray *observers = objc_getAssociatedObject(self, (__bridge const void *)(kAOPAssociatedObserversKey));
     if (!observers) {
         observers = [NSMutableArray array];
         objc_setAssociatedObject(self, (__bridge const void *)(kAOPAssociatedObserversKey), observers, OBJC_ASSOCIATION_RETAIN);
@@ -193,7 +193,7 @@ if (value) {\
 
 - (void)removeObserver:(NSObject *)observer forSelector:(SEL)selector
 {
-    NSMutableArray *observers = objc_getAssociatedObject(self, kAOPAssociatedObserversKey);
+    NSMutableArray *observers = objc_getAssociatedObject(self, (__bridge const void *)(kAOPAssociatedObserversKey));
     
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(AOPObserverInfo *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
         
@@ -280,16 +280,6 @@ if (value) {\
     return self;
 }
 
-- (void)dealloc
-{
-    if (_observer) {
-        [_observer release];
-    }
-    if (_block) {
-        [_block release];
-    }
-    [super dealloc];
-}
 
 
 @end

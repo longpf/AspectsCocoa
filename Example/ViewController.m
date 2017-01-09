@@ -8,11 +8,10 @@
 
 #import "ViewController.h"
 #import "NSObject+AOPObserver.h"
-#import "PFLabel.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) PFLabel *label;
+@property (nonatomic, strong) UILabel *label;
 
 @end
 
@@ -22,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.label = [PFLabel new];
+    self.label = [UILabel new];
     
     [self.label addObserver:self forSelector:@selector(setText:) withBlock:^(AOPObserverInfo *info,NSString *text){
         NSLog(@"text = %@",text);
