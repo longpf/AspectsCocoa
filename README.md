@@ -2,7 +2,7 @@ AspectsCocoa
 ==============
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/AspectsCocoa/AspectsCocoa/master/LICENSE)&nbsp;
-[![CocoaPods](http://img.shields.io/cocoapods/v/AspectsCocoa.svg?style=flat)](http://cocoapods.org/?q= AspectsCocoa)&nbsp;
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AspectsCocoa.svg)](https://img.shields.io/cocoapods/v/AspectsCocoa.svg)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%206%2B%20-red.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
 一个简单实现AOP的库
