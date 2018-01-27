@@ -67,7 +67,7 @@ AOP是OOP的延续，是（Aspect Oriented Programming）的缩写，意思是�
 实现原理
 ===============
 
-[可以参看我的博客>>](http://longpengfei.com/2017/01/10/AspectsCocoa/)
+[可以参看我的博客>>](http://blog.longpengfei.com/post/aspectscocoa/)
 
 
 其他
